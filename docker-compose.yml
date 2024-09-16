@@ -1,0 +1,12 @@
+services:
+  app:
+    image: ruby:3.3.5
+    working_dir: /app
+    environment:
+      BUNDLE_PATH: /bundle
+    volumes:
+      - ./:/app
+      - bundle:/bundle
+volumes:
+  bundle:
+    driver: local
