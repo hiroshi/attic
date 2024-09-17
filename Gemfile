@@ -16,3 +16,6 @@ end
 group :development do
   gem "web-console"
 end
+
+# NOTE: once 9.0.2 is released use it instead of edge.
+gem "mongoid", github: 'mongodb/mongoid', branch: 'master'

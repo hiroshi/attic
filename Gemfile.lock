@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/mongodb/mongoid.git
+  revision: a79e90cb67b8a5865e99a1c6d7cb11e0d7591e7c
+  branch: master
+  specs:
+    mongoid (9.0.1)
+      activemodel (>= 5.1, < 7.3, != 7.0.0)
+      concurrent-ruby (>= 1.0.5, < 2.0)
+      mongo (>= 2.18.0, < 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -79,6 +89,7 @@ GEM
       msgpack (~> 1.2)
     brakeman (6.2.1)
       racc
+    bson (5.0.1)
     builder (3.3.0)
     concurrent-ruby (1.3.4)
     connection_pool (2.4.1)
@@ -114,6 +125,8 @@ GEM
     marcel (1.0.4)
     mini_mime (1.1.5)
     minitest (5.25.1)
+    mongo (2.20.1)
+      bson (>= 4.14.1, < 6.0.0)
     msgpack (1.7.2)
     net-imap (0.4.16)
       date
@@ -258,6 +271,7 @@ DEPENDENCIES
   brakeman
   debug
   jbuilder
+  mongoid!
   puma (>= 5.0)
   rails (~> 7.2.1)
   rubocop-rails-omakase
