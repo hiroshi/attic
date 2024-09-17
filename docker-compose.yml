@@ -1,6 +1,6 @@
 services:
   app:
-    image: ruby:3.3.5
+    image: ruby:3.3.5-slim
     command: ['bundle', 'exec', 'rails', 'server', '-p', '3010', '-b', '0.0.0.0']
     ports:
       - '127.0.0.1:3010:3010'

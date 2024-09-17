@@ -1,0 +1,43 @@
+# https://kubernetes.io/docs/concepts/workloads/controllers/deployment/
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: attic
+  labels:
+    app: attic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: attic
+  template:
+    metadata:
+      labels:
+        app: attic
+    spec:
+      containers:
+      - name: attic
+        image: us-west1-docker.pkg.dev/topics-server/attic/attic:$TAG
+        # imagePullPolicy: Always
+        command: ['./bin/rails', 'server', '-p', '3010', '-e', 'production']
+        resources:
+          requests:
+            cpu: 10m
+            memory: 20Mi
+        ports:
+        - containerPort: 3010
+        env:
+        - name: SECRET_KEY_BASE
+          value: hoge
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: attic
+spec:
+  selector:
+    app: attic
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3010
