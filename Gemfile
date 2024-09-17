@@ -19,3 +19,5 @@ end
 
 # NOTE: once 9.0.2 is released use it instead of edge.
 gem "mongoid", github: 'mongodb/mongoid', branch: 'master'
+# warning: /usr/local/lib/ruby/3.3.0/ostruct.rb was loaded from the standard library, but will no longer be part of the default gems starting from Ruby 3.5.0.
+gem 'ostruct'
