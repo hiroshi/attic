@@ -125,7 +125,7 @@ development:
         # truncate_logs: true
 
   # Configure Mongoid-specific options. (optional)
-  options:
+  options: &options
     # Allow BSON::Decimal128 to be parsed and returned directly in
     # field values. When BSON 5 is present and the this option is set to false
     # (the default), BSON::Decimal128 values in the database will be returned
@@ -262,7 +262,7 @@ development:
     # prevent_multiple_calls_of_embedded_callbacks: true
 
     # Raise an error when performing a #find and the document is not found.
-    # raise_not_found_error: true
+    raise_not_found_error: true
 
     # Raise an error when defining a scope with the same name as an
     # existing method.
@@ -297,3 +297,17 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+  options:
+    <<: *options
+
+production:
+  clients:
+    default:
+      database: attic_production
+      hosts:
+        - mongo:27017
+      options:
+        read:
+          mode: :primary
+  options:
+    <<: *options
