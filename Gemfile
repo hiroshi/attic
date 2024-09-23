@@ -11,6 +11,7 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
+  gem "rspec-rails", "~> 7.0"
 end
 
 group :development do
@@ -21,3 +22,6 @@ end
 gem "mongoid", github: 'mongodb/mongoid', branch: 'master'
 # warning: /usr/local/lib/ruby/3.3.0/ostruct.rb was loaded from the standard library, but will no longer be part of the default gems starting from Ruby 3.5.0.
 gem 'ostruct'
+
+gem "omniauth-google-oauth2", "~> 1.2"
+gem "omniauth-rails_csrf_protection", "~> 1.0"

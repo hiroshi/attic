@@ -7,9 +7,14 @@ services:
     working_dir: /app
     environment:
       BUNDLE_PATH: /bundle
+      # RUBY_DEBUG_OPEN: true
+    env_file:
+      - .env.development
     volumes:
       - ./:/app
       - bundle:/bundle
+    tmpfs:
+      - /app/tmp/pids
     depends_on:
       - mongo
   mongo:

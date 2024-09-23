@@ -11,4 +11,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  get '/login', to: 'sessions#new'
+  get 'auth/:provider/callback', to: 'sessions#create'
 end

@@ -38,5 +38,7 @@ module App
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    config.hosts << 'attic.lvh.me:3010'
   end
 end
