@@ -10,7 +10,7 @@ function App() {
     try {
       (async () => {
         const resp = await fetch(
-          "http://attic.lvh.me:3010/api/v0/current_user",
+          "https://attic.lvh.me:3011/api/v0/current_user",
           {
             headers: {
               Authorization: "bearer XXX",
@@ -35,7 +35,7 @@ function App() {
         {currentUser ? (
           <p>Logged in as: {currentUser.email}</p>
         ) : (
-          <a href="http://attic.lvh.me:3010/login">login</a>
+          <a href="https://attic.lvh.me:3011/login">login</a>
         )}
       </div>
       <hr />

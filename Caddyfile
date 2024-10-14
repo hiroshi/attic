@@ -43,12 +43,18 @@ attic.lvh.me:3011, *.attic.lvh.me:3011 {
 	# file_server
 
 	# Another common task is to set up a reverse proxy:
-	reverse_proxy app:3010
+	reverse_proxy attic:3010
 	tls internal
 
 	# Or serve a PHP site through php-fpm:
 	# php_fastcgi localhost:9000
 }
+
+*.lvh.me:3011 {
+	reverse_proxy {labels.2}:3010
+	tls internal
+}
+
 
 # Refer to the Caddy docs for more information:
 # https://caddyserver.com/docs/caddyfile
