@@ -14,7 +14,12 @@ docker-push: tag
 
 ## GKE
 KUBECTL := kubectl --cluster=gke_topics-server_us-west1-a_topics
-deploy: attic
+deploy: sleep attic
+
+# NOTE: maybe solve following error when deploying immediate after push
+#   Failed to pull image "us-west1-docker.pkg.dev/topics-server/attic/attic:7895e77": rpc error: code = Unavailable desc = error reading from server: EOF
+sleep:
+	sleep 1
 
 export TAG
 attic: tag
