@@ -1,4 +1,11 @@
 services:
+  caddy:
+    image: caddy
+    ports:
+      - '127.0.0.1:3011:3011'
+    volumes:
+      - caddy_data:/data
+      - ./Caddyfile:/etc/caddy/Caddyfile
   app:
     image: ruby:3.3.5
     command: ['bundle', 'exec', 'rails', 'server', '-p', '3010', '-b', '0.0.0.0']
@@ -19,6 +26,9 @@ services:
       - mongo
   mongo:
     image: mongo
+
 volumes:
   bundle:
+    driver: local
+  caddy_data:
     driver: local

@@ -40,6 +40,8 @@ module App
     config.generators.system_tests = nil
 
     config.hosts << 'attic.lvh.me:3010'
+    config.hosts << 'attic.lvh.me:3011'
+    config.hosts << '.attic.lvh.me:3011'
     config.hosts << 'attic.yakitara.com'
   end
 end
