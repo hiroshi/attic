@@ -33,7 +33,7 @@ function App() {
     <>
       <div>
         {currentUser ? (
-          <p>Logged in as: {currentUser.email}</p>
+          <p>Logged in as: {currentUser.accounts[0].email}</p>
         ) : (
           <a href="https://attic.lvh.me:3011/login">login</a>
         )}

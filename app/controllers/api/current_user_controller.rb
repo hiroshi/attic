@@ -4,6 +4,6 @@ class Api::CurrentUserController < ApplicationController
   before_action :login_required
 
   def show
-    render json: { user_id: session[:user_id] }
+    render json: current_user
   end
 end
