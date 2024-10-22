@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/mongodb/mongoid.git
-  revision: a79e90cb67b8a5865e99a1c6d7cb11e0d7591e7c
+  revision: 3c8f5dbdedd14b3038309c2314a0e7278c931062
   branch: master
   specs:
-    mongoid (9.0.1)
+    mongoid (9.0.2)
       activemodel (>= 5.1, < 7.3, != 7.0.0)
       concurrent-ruby (>= 1.0.5, < 2.0)
       mongo (>= 2.18.0, < 3.0.0)
@@ -135,7 +135,7 @@ GEM
     marcel (1.0.4)
     mini_mime (1.1.5)
     minitest (5.25.1)
-    mongo (2.20.1)
+    mongo (2.21.0)
       bson (>= 4.14.1, < 6.0.0)
     msgpack (1.7.2)
     multi_xml (0.7.1)
