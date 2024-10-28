@@ -20,7 +20,7 @@ require 'rspec/rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Rails.root.glob('spec/support/**/*.rb').sort_by(&:to_s).each { |f| require f }
+Rails.root.glob('spec/support/**/*.rb').sort_by(&:to_s).each { |f| require f }
 
 RSpec.configure do |config|
   # Remove this line to enable support for ActiveRecord
@@ -57,4 +57,7 @@ RSpec.configure do |config|
   config.before(:each) do
     Mongoid.purge!
   end
+  # https://github.com/omniauth/omniauth/wiki/Integration-Testing
+  OmniAuth.config.test_mode = true
+  config.include SessionHelper
 end

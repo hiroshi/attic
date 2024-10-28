@@ -6,7 +6,6 @@ RSpec.describe "Sessions", type: :request do
 
     before do
       # https://github.com/omniauth/omniauth/wiki/Integration-Testing
-      OmniAuth.config.test_mode = true
       OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
         {
           provider: 'google_oauth2',

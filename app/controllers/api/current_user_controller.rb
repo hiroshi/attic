@@ -1,6 +1,5 @@
 class Api::CurrentUserController < ApplicationController
   include SessionConcern
-
   before_action :login_required
 
   def show

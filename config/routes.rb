@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get 'auth/:provider/callback', to: 'sessions#create'
 
+  resources :apps
+
   scope '/api/v:version', constraints: { version: /\d+/ } do
     get 'current_user', to: 'api/current_user#show'
   end
