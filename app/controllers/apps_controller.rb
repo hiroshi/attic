@@ -3,11 +3,11 @@ class AppsController < ApplicationController
   before_action :login_required
 
   def index
-    @apps = AtticApp.where('app_owners.user_id': current_user).all
+    @apps = AtticApp.where('owners.user_id': current_user).all
   end
 
   def create
-    AtticApp.create!(params.require(:attic_app).permit(:name).merge(app_owners: [{user: current_user}]))
+    AtticApp.create!(params.require(:app).permit(:name).merge(owners: [{user: current_user}]))
     redirect_to action: :index
   end
 
