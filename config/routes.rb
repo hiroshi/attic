@@ -19,5 +19,7 @@ Rails.application.routes.draw do
 
   scope '/api/v:version', constraints: { version: /\d+/ } do
     get 'current_user', to: 'api/current_user#show'
+    # custom resources
+    post ':app/:name', to: 'api/resources#create'
   end
 end
