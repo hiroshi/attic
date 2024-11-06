@@ -6,7 +6,7 @@ module SessionConcern
     def login_required
       return if current_user
       if request.path =~ %r{/api/}
-        render json: { message: 'login required.' }, status: :forbidden
+        raise ApplicationController::HttpError.new("login required.", :forbidden)
       else
         redirect_to login_path
       end
