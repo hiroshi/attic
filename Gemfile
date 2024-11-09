@@ -26,3 +26,4 @@ gem 'ostruct'
 gem "omniauth-google-oauth2", "~> 1.2"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem 'rack-cors'
+gem 'vite_rails'

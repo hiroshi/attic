@@ -100,6 +100,7 @@ GEM
       reline (>= 0.3.8)
     diff-lcs (1.5.1)
     drb (2.2.1)
+    dry-cli (1.2.0)
     erubi (1.13.0)
     faraday (2.12.0)
       faraday-net_http (>= 2.0, < 3.4)
@@ -202,6 +203,8 @@ GEM
     rack-protection (4.0.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0, < 4)
+    rack-proxy (0.7.7)
+      rack
     rack-session (2.0.0)
       rack (>= 3.0.0)
     rack-test (2.1.0)
@@ -311,6 +314,14 @@ GEM
     uri (0.13.1)
     useragent (0.16.10)
     version_gem (1.1.4)
+    vite_rails (3.0.19)
+      railties (>= 5.1, < 9)
+      vite_ruby (~> 3.0, >= 3.2.2)
+    vite_ruby (3.9.0)
+      dry-cli (>= 0.7, < 2)
+      logger (~> 1.6)
+      rack-proxy (~> 0.6, >= 0.6.1)
+      zeitwerk (~> 2.2)
     web-console (4.2.1)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -346,6 +357,7 @@ DEPENDENCIES
   rubocop-rails-omakase
   sprockets-rails
   tzinfo-data
+  vite_rails
   web-console
 
 BUNDLED WITH
