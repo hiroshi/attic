@@ -1,0 +1,8 @@
+<%= form_for AtticApp.new, as: :app, url: apps_path do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.button :submit %>
+<% end %>

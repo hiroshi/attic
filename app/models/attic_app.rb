@@ -7,6 +7,15 @@ class AtticApp
   field :name, type: String
   validates :name, presence: true
 
+  class Domain
+    include Mongoid::Document
+    embedded_in :app, class_name: 'AtticApp'
+
+    field :name, type: String
+    validates :name, presence: true
+  end
+  embeds_many :domains
+
   class Owner
     include Mongoid::Document
     embedded_in :app, class_name: 'AtticApp'

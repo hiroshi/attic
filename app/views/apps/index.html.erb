@@ -1,11 +1,4 @@
-<%= form_for AtticApp.new, as: :app, url: apps_path do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-  <%= f.button :submit %>
-<% end %>
-
+<p><%= link_to 'New app', new_app_path %></p>
 <ul>
 <% @apps.each do |app| %>
   <li><%= app.name %></li>

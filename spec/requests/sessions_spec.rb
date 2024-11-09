@@ -1,10 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe "Sessions", type: :request do
+  # describe "GET /login" do
+
+  #   before do
+  #     get '/login', headers: { referer: 'https://myapp.com/' }
+  #   end
+
+  #   it do
+  #     p session['origin']
+  #   end
+  # end
+
   describe "GET /auth/google_oauth2/callback" do
     let!(:user) {}
+    let!(:attic_app) { AtticApp.create!(name: 'myapp', domains: [{ name: 'myapp.com' }]) }
 
     before do
+      # # For session['origin']
+      # get '/login', headers: { referer: 'https://myapp.com/' }
+      # expect(session['origin']).to eq('https://myapp.com/')
+
       # https://github.com/omniauth/omniauth/wiki/Integration-Testing
       OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new(
         {

@@ -1,7 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 // import reactLogo from "./assets/react.svg";
 // import viteLogo from "/vite.svg";
 // import "./App.css";
+
+function Todos() {
+  const inputRef = useRef(null);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    // console.log(inputRef.current.value);
+    const resp = await fetch("https://attic.lvh.me:3011/api/v0/todo/items", {
+      method: "POST",
+      credentials: "include",
+    });
+    // console.log(resp);
+    // console.log(await resp.text());
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <input type="text" ref={inputRef} />
+      <button>New item</button>
+    </form>
+  );
+}
 
 function App() {
   const [currentUser, setCurrentUser] = useState();
@@ -12,15 +34,15 @@ function App() {
         const resp = await fetch(
           "https://attic.lvh.me:3011/api/v0/current_user",
           {
-            headers: {
-              Authorization: "bearer XXX",
-            },
+            // headers: {
+            //   Authorization: "bearer XXX",
+            // },
             credentials: "include",
           },
         );
         if (resp.ok) {
           const data = await resp.json();
-          console.log(data);
+          // console.log(data);
           setCurrentUser(data);
         }
       })();
@@ -39,7 +61,7 @@ function App() {
         )}
       </div>
       <hr />
-      <div></div>
+      <Todos />
     </>
   );
 }
