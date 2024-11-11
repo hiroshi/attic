@@ -3,6 +3,7 @@ services:
     image: caddy
     ports:
       - '127.0.0.1:3011:3011'
+      # - '127.0.0.1:3036:3036'
     volumes:
       - caddy_data:/data
       - ./Caddyfile:/etc/caddy/Caddyfile
@@ -35,7 +36,7 @@ services:
     <<: *app
     command: ['bin/vite', 'dev']
     ports:
-      - '127.0.0.1:3036:3036'
+      - '127.0.0.1:3036:3011'
   mongo:
     image: mongo
 

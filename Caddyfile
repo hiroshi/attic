@@ -50,6 +50,11 @@ attic.lvh.me:3011, *.attic.lvh.me:3011 {
 	# php_fastcgi localhost:9000
 }
 
+vite.lvh.me:3011 {
+	reverse_proxy vite:3011
+	tls internal
+}
+
 *.lvh.me:3011 {
 	reverse_proxy {labels.2}:3010
 	tls internal
