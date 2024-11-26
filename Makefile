@@ -1,8 +1,10 @@
 PROJECT := topics-server
 IMAGE = us-west1-docker.pkg.dev/$(PROJECT)/attic/attic
 
+PHONY: tag
 tag:
 	$(eval TAG=$(shell git rev-parse --short HEAD))
+	@echo TAG=$(TAG)
 
 docker-build: tag
 	docker build --platform=linux/amd64 -t $(IMAGE):$(TAG)  ./

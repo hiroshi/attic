@@ -10,8 +10,9 @@ services:
     networks:
       - attic
   attic: &app
-    # image: ruby:3.3.5
-    build: .
+    build:
+      context: .
+      target: dev
     command: ['bundle', 'exec', 'rails', 'server', '-p', '3010', '-b', '0.0.0.0']
     ports:
       - '127.0.0.1:3010:3010'
